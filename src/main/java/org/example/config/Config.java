@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 @Configuration
 public class Config {
@@ -27,7 +26,7 @@ public class Config {
 
     @Bean
     @Autowired
-    @Scope("singleton") // Пример настройки области бина
+    @Scope("singleton")
     public Employee employee(@Qualifier("car") Car car, // Использование @Qualifier для явного указания бина
                              @Qualifier("pet") Pet pet) {
         return new Employee("John Doe", 30, car(), pet());

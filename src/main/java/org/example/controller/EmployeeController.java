@@ -8,10 +8,10 @@ public class EmployeeController
 {
     @GetMapping("/hello")
     public String hello(String name) {
-        if (name != null) {
-            return "Hello " + name + "!";
-        } else {
+        if (name == null) {
             return "Hello world!";
+        } else {
+            return "Hello " + name + "!";
         }
     }
 
